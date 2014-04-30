@@ -24,17 +24,17 @@ ActiveRallyAngle=2.6;//(Note: Can not be lower then Bank Angle.) Drift Goes Acti
 ActiveRally=FALSE;
 Gear_Power=[-15,0,10,20,30,50,70,90,110,130,150,170];
 NumGear_Power=12;// 15 is Max for Text hud display.
-VLDE=0.990; //VEHICLE_LINEAR_DEFLECTION_EFFICIENCY
-VLDT=0.250; //VEHICLE_LINEAR_DEFLECTION_TIMESCALE
-VADE=0.113; //VEHICLE_ANGULAR_DEFLECTION_EFFICIENCY
-VADT=0.232; //VEHICLE_ANGULAR_DEFLECTION_TIMESCALE
-VAMT=0.100; //VEHICLE_ANGULAR_MOTOR_TIMESCALE
-VAMDT=0.100; //VEHICLE_ANGULAR_MOTOR_DECAY_TIMESCALE
+VLDE=0.990; //VEHICLE_LINEAR_DEFLECTION_EFFICIENCY   //0.950   
+VLDT=0.250; //VEHICLE_LINEAR_DEFLECTION_TIMESCALE    //stay as is
+VADE=0.113; //VEHICLE_ANGULAR_DEFLECTION_EFFICIENCY  // 0.225  less turn for high speed tracks
+VADT=0.232; //VEHICLE_ANGULAR_DEFLECTION_TIMESCALE  // 0.225  less turn for high speed tracks
+VAMT=0.100; //VEHICLE_ANGULAR_MOTOR_TIMESCALE       //0.195   less turn for high speed tracks
+VAMDT=0.100; //VEHICLE_ANGULAR_MOTOR_DECAY_TIMESCALE  //0.090  less turn for high speed tracks
 
 //// VEHICLE_LINEAR_FRICTION_TIMESCALE
 VLFT_X=15.00;	VLFT_Y=0.010;	VLFT_Z=100.0;
 //// VEHICLE_ANGULAR_FRICTION_TIMESCALE
-VAFT_X=0.400;	VAFT_Y=20.000;	VAFT_Z=15.00;
+VAFT_X=0.400;	VAFT_Y=20.000;	VAFT_Z=15.00; //  VAFT_Z=85.00   less turn for high speed tracks
 
 VVAE=0.450;// VEHICLE_VERTICAL_ATTRACTION_EFFICIENCY ///Suspension 
 VVAT=2.500;// VEHICLE_VERTICAL_ATTRACTION_TIMESCALE ///Vehicle Weight/Float High=More Low=Less
@@ -49,11 +49,11 @@ Release_Ratio=0.0075;
 BrakePower=20;
 Brake_Speed=5;
 
-dead_zone=1.5;//Steering Deadzone
-STR_Response=1.65;//Driver Steering Response
-Initial_Steer=15.0;//Speed in X axis
-Peak_Steer=105.0;//Speed in X axis
-Max_Response=23.5;//Steering Parabolic Curve for Speed above Peak_Steer.
+dead_zone=1.25;//Steering Deadzone
+STR_Response=1.65;//Driver Steering Response    //0.975   less turn for high speed tracks
+Initial_Steer=15.0;//Speed in X axis            
+Peak_Steer=105.0;//Speed in X axis              //195     Increase for high speed tracks
+Max_Response=23.5;//Steering Parabolic Curve for Speed above Peak_Steer.   //12.5    less turn for hight speed tracks
 
 Burn_Boost=54;//Burnout Slip Max velocity at Y axis
 Slip_Max=6.5;//Slip Dissipate Velocity in Y axis|SlipDriftOFF();
