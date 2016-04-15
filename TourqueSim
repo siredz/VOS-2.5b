@@ -1,0 +1,28 @@
+# VOS-2.5b
+Autoworks VOS 2.5b vehicle script for secondlife
+
+New Additions: By Zero Upshaw & Monkey Canning   
+
+(Add between  //// Gas Padel   &   ////Flight Launch Safty  in the timer(){.....}
+
+//// Gas Padel
+        if (Gas_On == TRUE) {
+            
+            multiplier=4;
+            if ( Gear >1 && Gear <6) multiplier = 20/Gear-1;
+///            
+            if (Fuel < 0.1)                 Fuel += 0.035*(Pedal_Ratio*multiplier);
+            if (Fuel > 0.1 && Fuel < 0.4)   Fuel += 0.05*(Pedal_Ratio*multiplier);
+            if (Fuel > 0.4 && Fuel < 0.9)   Fuel += (Pedal_Ratio*multiplier);
+            if (Fuel > 0.9)                 Fuel += 0.005*(Pedal_Ratio*multiplier);
+        }
+        if (Gas_On == FALSE){
+            if (Brake_On == TRUE)           Fuel -= 4*(Release_Ratio*multiplier);
+            else                            Fuel -= Release_Ratio*multiplier;
+        }
+        if (Fuel >= 1.0) Fuel = 1.0;
+        if (Fuel <= 0) Fuel = 0;
+        // Forward Reverse Motion = Current Gear Power * Fuel Flow
+        Linear.x = Power*( Fuel + (0.001*llFabs(SpeedVec.x)) );
+
+////Flight Launch Safty
